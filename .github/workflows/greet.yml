@@ -12,5 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: echos
+        run: echo "::notice:: Script executed successfully! 🎉"
+
       - name: Run Python
         run: python .github/scripts/info.py
