@@ -14,6 +14,7 @@ key_file.chmod(0o600)
 
 ssh_command = [
     "ssh",
+    "-T"
     "-i", str(key_file),
     f"{user}@{host}",
 ]
