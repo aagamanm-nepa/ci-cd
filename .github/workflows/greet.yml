@@ -12,5 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Python
-        run: python .github/scripts/info.py
+      - name: Connect to VPS
+        env:
+          SERVER_HOST: ${{ secrets.HOST_NAME }}
+          SERVER_USER: ${{ secrets.HOST_USER }}
+          SERVER_SSH_KEY: ${{ secrets.SSH_KEY }}
+        run: python .github/scripts/connect_vps.py
